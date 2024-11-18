@@ -1,0 +1,75 @@
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+.option-box, .slot-box {
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: glow 2s infinite alternate;
+}
+
+.option-button, .slot-button, .back-button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.option-button:hover, .slot-button:hover, .back-button:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 1);
+}
+
+.icon-box {
+    margin-top: 20px;
+}
+
+.fas.fa-check-circle {
+    font-size: 48px;
+    color: green;
+    animation: pulse 1s infinite alternate;
+}
+
+.fas.fa-times-circle {
+    font-size: 48px;
+    color: red;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(0, 255, 0, 1);
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Doctors</h1>
+    </header>
+    <main>
+        <div id="doctor-list">
+            <!-- Example doctor list; this should be dynamically generated from the backend -->
+            <div class="doctor" onclick="showSlots('doctor1')">Dr. Smith</div>
+            <div class="doctor" onclick="showSlots('doctor2')">Dr. Johnson</div>
+        </div>
+        <div id="slots" style="display: none;">
+            <h2>Available Slots</h2>
+            <div id="slots-list"></div>
+        </div>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>

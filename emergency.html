@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambulance Booking</title>
+    <link rel="stylesheet" href="emergency.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">Ambulance Booking</div>
+    
+    <div class="location-input">
+        <input type="text" id="userLocation" placeholder="Enter your location">
+    </div>
+
+    <!-- Private Ambulance Option -->
+    <div class="ambulance-option private" onclick="showDetails('private')">
+        <div>
+            <p>Private</p>
+            <p>₹306</p>
+        </div>
+        <div>
+            <p>4.7 Kms away</p>
+            <p>Estd Time: 10:34 AM</p>
+        </div>
+    </div>
+    <div id="privateDetails" class="details">
+        <p>Available Ambulances: 3</p>
+        <p>Nearest: 4.7 Kms</p>
+        <button class="book-btn" onclick="showPaymentSection()">Book Ambulance</button>
+    </div>
+
+    <!-- Government Ambulance Option -->
+    <div class="ambulance-option govt" onclick="showDetails('govt')">
+        <div>
+            <p>Government</p>
+            <p>₹107</p>
+        </div>
+        <div>
+            <p>3.8 Kms away</p>
+            <p>Estd Time: 10:34 AM</p>
+        </div>
+    </div>
+    <div id="govtDetails" class="details">
+        <p>Available Ambulances: 5</p>
+        <p>Nearest: 3.8 Kms</p>
+        <button class="book-btn" onclick="showPaymentSection()">Book Ambulance</button>
+    </div>
+
+    <!-- Payment Section -->
+    <div id="paymentSection" class="payment-section">
+        <p>Enter Card Details:</p>
+        <input type="text" placeholder="Card Number">
+        <input type="text" placeholder="Expiry Date">
+        <input type="text" placeholder="CVV">
+        <button class="pay-btn" onclick="completePayment()">Complete Payment</button>
+    </div>
+
+    <!-- Receipt -->
+    <div id="receipt" class="receipt">
+        <p>Payment Successful!</p>
+        <p>Driver Contact: +91-9876543210</p>
+        <p>Real-time location link will be shared.</p>
+    </div>
+</div>
+
+<script src="emergency.js"></script>
+</body>
+</html>

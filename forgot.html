@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="forgot.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div id="login-form" class="form-container">
+            <h1>Login</h1>
+            <form>
+                <input type="text" placeholder="Mobile Number / Email ID" required>
+                <input type="password" placeholder="Password" required>
+                <div>
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me for 30 days</label>
+                </div>
+                <a href="#" onclick="showForgotPassword()">Forgot password?</a>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Forgot Password Form -->
+        <div id="forgot-password" class="form-container hidden">
+            <h1>Forgot Password</h1>
+            <form onsubmit="event.preventDefault(); showOtpVerification();">
+                <input type="text" id="phone-number" placeholder="Enter your Phone Number" required maxlength="10" oninput="validatePhoneNumber()">
+                <button type="submit" id="send-otp" disabled>Send OTP</button>
+            </form>
+            <p><a href="#" onclick="showLogin()">Back to Login</a></p>
+        </div>
+
+        <!-- OTP Verification Form -->
+        <div id="otp-verification" class="form-container hidden">
+            <h1>OTP Verification</h1>
+            <form onsubmit="event.preventDefault(); showResetPassword();">
+                <input type="text" placeholder="Enter the OTP" required>
+                <button type="submit">Verify OTP</button>
+            </form>
+            <p><a href="#" onclick="showForgotPassword()">Resend OTP</a></p>
+            <p><a href="#" onclick="showLogin()">Back to Login</a></p>
+        </div>
+
+        <!-- Reset Password Form -->
+        <div id="reset-password" class="form-container hidden">
+            <h1>Reset Password</h1>
+            <form onsubmit="event.preventDefault(); showSuccessMessage();">
+                <input type="password" placeholder="New Password" required>
+                <input type="password" placeholder="Confirm New Password" required>
+                <button type="submit">Reset Password</button>
+            </form>
+            <p><a href="#" onclick="showLogin()">Back to Login</a></p>
+        </div>
+
+        <!-- Success Message -->
+        <div id="success-message" class="form-container hidden">
+            <h1>Password Reset Successful</h1>
+            <p>Your password has been reset. You can now log in with your new password.</p>
+            <p><a href="#" onclick="showLogin()">Go to Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        function showForgotPassword() {
+            toggleForms('forgot-password');
+        }
+
+        function showLogin() {
+            toggleForms('login-form');
+        }
+
+        function showOtpVerification() {
+            toggleForms('otp-verification');
+        }
+
+        function showResetPassword() {
+            toggleForms('reset-password');
+        }
+
+        function showSuccessMessage() {
+            toggleForms('success-message');
+        }
+
+        function toggleForms(formId) {
+            const forms = document.querySelectorAll('.form-container');
+            forms.forEach(form => {
+                if (form.id === formId) {
+                    form.classList.remove('hidden');
+                } else {
+                    form.classList.add('hidden');
+                }
+            });
+        }
+
+        function validatePhoneNumber() {
+            const phoneInput = document.getElementById('phone-number');
+            const sendOtpButton = document.getElementById('send-otp');
+            const isValid = phoneInput.value.length === 10 && !isNaN(phoneInput.value);
+            sendOtpButton.disabled = !isValid;
+        }
+    </script>
+</body>
+</html>

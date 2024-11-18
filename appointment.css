@@ -1,0 +1,83 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    background: #007BFF;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.tabs button.active {
+    background: #0056b3;
+}
+
+.appointment-list {
+    display: none;
+}
+
+.appointment-list.active {
+    display: block;
+}
+
+.appointment-box {
+    background: #fff;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.appointment-box:hover {
+    transform: scale(1.02);
+}
+
+.notification {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.notification.active {
+    background: #28a745; /* Green */
+}
+
+.notification.completed {
+    background: #dc3545; /* Red */
+}

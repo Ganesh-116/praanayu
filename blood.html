@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Blood</title>
+    <link rel="stylesheet" href="blood.css">
+</head>
+<body>
+    <div class="container">
+        <div class="button-container">
+            <button class="donate-button">Donate Blood</button>
+            <button class="blood-available-button">Blood Available</button>
+        </div>
+        
+        <!-- Blood Bank Selection Section -->
+        <div class="blood-bank-container" style="display: none;">
+            <h2>Popular Blood Banks</h2>
+            <div class="search-bar">
+                <input type="text" placeholder="Search Blood Bank" id="blood-bank-search">
+            </div>
+            <div class="blood-bank-list" id="blood-bank-list">
+                <div class="blood-bank" data-name="Chiranjeevi Blood Bank" data-location="Hyderabad">Chiranjeevi Blood Bank (Hyderabad)</div>
+                <div class="blood-bank" data-name="Red Cross Blood Donation Centre" data-location="Hyderabad">Red Cross Blood Donation Centre (Hyderabad)</div>
+                <div class="blood-bank" data-name="Government Blood Bank" data-location="Hyderabad">Government Blood Bank (Hyderabad)</div>
+                <div class="blood-bank" data-name="Sankalp Blood Bank" data-location="Hyderabad">Sankalp Blood Bank (Hyderabad)</div>
+                <div class="blood-bank" data-name="KIMS Blood Bank" data-location="Hyderabad">KIMS Blood Bank (Hyderabad)</div>
+                <div class="blood-bank" data-name="Sunshine Blood Bank" data-location="Hyderabad">Sunshine Blood Bank (Hyderabad)</div>
+                <div class="blood-bank" data-name="Life Blood Bank" data-location="Hyderabad">Life Blood Bank (Hyderabad)</div>
+                <div class="blood-bank" data-name="Telangana Blood Bank" data-location="Hyderabad">Telangana Blood Bank (Hyderabad)</div>
+            </div>
+            <button class="previous-button" id="back-to-main">Back</button>
+        </div>
+
+        <!-- Donor Details Section -->
+        <div class="donor-details-container" style="display: none;">
+            <h2>Enter Donor Details</h2>
+            <form id="donor-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" min="18" max="65" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="habits">Habits:</label>
+                <select id="habits" required>
+                    <option value="">Any Habits?</option>
+                    <option value="none">None</option>
+                    <option value="smoking">Smoking</option>
+                    <option value="alcohol">Alcohol Consumption</option>
+                    <option value="both">Both</option>
+                </select>
+
+                <label for="health">Health Status (Last 15 days):</label>
+                <select id="health" required>
+                    <option value="">Was health fine?</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <button type="submit">Register</button>
+                <button type="button" class="previous-button" id="back-to-blood-banks">Back</button>
+            </form>
+        </div>
+
+        <!-- Confirmation Section -->
+        <div class="confirmation-container" style="display: none;">
+            <h2>Thank You for Registering!</h2>
+            <p>You are successfully registered to donate blood.</p>
+            <p><strong>Donation Appointment:</strong></p>
+            <p id="donation-time">10:00 AM, May 12th</p>
+            <p id="donation-location">Chiranjeevi Blood Bank, Hyderabad</p>
+            <button class="previous-button" id="back-to-main-confirmation">Back</button>
+        </div>
+
+        <!-- Blood Availability Section -->
+        <div class="blood-availability-container" style="display: none;">
+            <h2>Blood Availability</h2>
+            <div class="blood-bank-availability" id="blood-availability-list">
+                <div class="blood-group" data-group="A+" data-units="5" data-location="Chiranjeevi Blood Bank">A+ - 5 Units</div>
+                <div class="blood-group" data-group="A-" data-units="3" data-location="Red Cross Blood Donation Centre">A- - 3 Units</div>
+                <div class="blood-group" data-group="B+" data-units="8" data-location="Government Blood Bank">B+ - 8 Units</div>
+                <div class="blood-group" data-group="O+" data-units="2" data-location="Sankalp Blood Bank">O+ - 2 Units</div>
+                <div class="blood-group" data-group="AB+" data-units="4" data-location="KIMS Blood Bank">AB+ - 4 Units</div>
+                <div class="blood-group" data-group="B-" data-units="6" data-location="Sunshine Blood Bank">B- - 6 Units</div>
+                <div class="blood-group" data-group="O-" data-units="1" data-location="Life Blood Bank">O- - 1 Unit</div>
+                <div class="blood-group" data-group="AB-" data-units="7" data-location="Telangana Blood Bank">AB- - 7 Units</div>
+            </div>
+            <button class="previous-button" id="back-to-main-availability">Back</button>
+        </div>
+    </div>
+    <script src="blood.js"></script>
+</body>
+</html>

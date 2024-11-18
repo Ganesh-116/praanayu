@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Medicine Delivery</title>
+    <link rel="stylesheet" href="10 min delivery.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Express Medicine Delivery</h1>
+        <p>Get essential medicines delivered in 10 minutes!</p>
+    </div>
+
+    <div class="container">
+        <div class="step" id="locationStep">
+            <h2>Select Delivery Location</h2>
+            <select id="location">
+                <option value="Medchal">Medchal</option>
+                <option value="Kompally">Kompally</option>
+                <option value="LB Nagar">LB Nagar</option>
+                <option value="Patancheru">Patancheru</option>
+            </select>
+            <button onclick="nextStep('medicineStep')">Next</button>
+        </div>
+
+        <div class="step" id="medicineStep" style="display: none;">
+            <h2>Select Medicines</h2>
+            <div class="medicine-item">
+                <p>Paracetamol - ₹30</p>
+                <button onclick="addToCart('Paracetamol', 30)">Add to Cart</button>
+            </div>
+            <div class="medicine-item">
+                <p>Ibuprofen - ₹40</p>
+                <button onclick="addToCart('Ibuprofen', 40)">Add to Cart</button>
+            </div>
+            <div class="medicine-item">
+                <p>Cough Syrup - ₹50</p>
+                <button onclick="addToCart('Cough Syrup', 50)">Add to Cart</button>
+            </div>
+            <div class="cart-section">
+                <h3>Cart</h3>
+                <div id="cartItems"></div>
+                <p>Total: ₹<span id="totalPrice">0</span></p>
+                <button onclick="nextStep('checkoutStep')">Checkout</button>
+            </div>
+        </div>
+
+        <div class="step" id="checkoutStep" style="display: none;">
+            <h2>Checkout</h2>
+            <form id="checkoutForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required>
+                
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" required>
+
+                <label for="paymentMethod">Payment Method:</label>
+                <select id="paymentMethod" required>
+                    <option value="card">Card</option>
+                    <option value="upi">UPI</option>
+                </select>
+
+                <button type="button" onclick="completePayment()">Complete Payment</button>
+            </form>
+            <p id="confirmationMessage" style="display: none;"></p>
+        </div>
+
+        <div class="step" id="orderDetailsStep" style="display: none;">
+            <h2>Order Details</h2>
+            <p id="orderDetails"></p>
+        </div>
+    </div>
+
+    <script src="10 min delivery.js"></script>
+</body>
+</html>

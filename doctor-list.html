@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors List</title>
+    <link rel="stylesheet" href="doctor-list.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Online Health Booking System</h1>
+            <nav class="nav">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="medicines.html" class="nav-link">Medicines</a>
+                <a href="appointments.html" class="nav-link">Book Appointments</a>
+                <a href="hospitals.html" class="nav-link">hospital-list</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Search for doctor/specialization..." class="search-input">
+                <button id="search-btn" class="search-button">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="doctors">
+            <div class="container">
+                <h2 class="section-heading">Doctors List</h2>
+                <div id="doctor-list" class="doctor-list">
+                    <div class="doctor-item">
+                        <img src="doctor.png">
+                        <h3>Dr. Krishna</h3>
+                        <p>Specialization: General Medicine</p>
+                        <p>Hospital: YASHODA</p>
+                        <p>Price: ₹200</p>
+                        <button onclick="window.location.href='doctor-profile.html?doctorId=1'">View Profile</button>
+                    </div>
+                    <div class="doctor-item">
+                        <img src="C:\Users\DELL\Desktop\project.1\SIP project\istockphoto-177373093-612x612.jpg" alt="Dr. Jane Smith">
+                        <h3>Dr. Ravi</h3>
+                        <p>Specialization: Pediatrics</p>
+                        <p>Hospital: RUSSH</p>
+                        <p>Price:  ₹150</p>
+                        <button onclick="window.location.href='doctor-profile.html?doctorId=2'">View Profile</button>
+                    </div>
+                    <div class="doctor-item">
+                        <img src="C:\Users\DELL\Desktop\project.1\SIP project\360_F_707893394_5DEhlBjWOmse1nyu0rC9T7ZRvsAFDkYC.jpg" alt="Dr. Michael Brown">
+                        <h3>Dr. Babu</h3>
+                        <p>Specialization: Cardiology</p>
+                        <p>Hospital: APOLLO</p>
+                        <p>Price: ₹150</p>
+                        <button onclick="window.location.href='doctor-profile.html?doctorId=3'">View Profile</button>
+                    </div>
+                    <div class="doctor-item">
+                        <img src="C:\Users\DELL\Desktop\project.1\SIP project\premium_photo-1682089872205-dbbae3e4ba32.jpeg" alt="Dr.Manohari">
+                        <h3>Dr. Manohari</h3>
+                        <p>Specialization: Orthopedics</p>
+                        <p>Hospital: CMR HOSPITAL</p>
+                        <p>Price: FREE</p>
+                        <button onclick="window.location.href='doctor-profile.html?doctorId=5'">View Profile</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Online Health Booking System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Search function
+        document.getElementById('search-btn').addEventListener('click', function() {
+            const searchInput = document.getElementById('search').value.toLowerCase();
+            const doctorItems = document.querySelectorAll('.doctor-item');
+
+            doctorItems.forEach(item => {
+                const name = item.querySelector('h3').textContent.toLowerCase();
+                if (name.includes(searchInput)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment System</title>
+    <link rel="stylesheet" href="exchange.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div id="step1" class="step active">
+            <h1>Appointment Options</h1>
+            <div class="option-box">
+                <button class="option-button" id="exchange-button">Exchange Slot</button>
+            </div>
+            <div class="option-box">
+                <button class="option-button" id="cancel-button">Cancel Slot</button>
+            </div>
+        </div>
+
+        <div id="step2" class="step">
+            <h1>Exchange Slots</h1>
+            <div class="slot-box">
+                <button class="slot-button">9:00 AM - 10:00 AM</button>
+            </div>
+            <div class="slot-box">
+                <button class="slot-button">10:00 AM - 11:00 AM</button>
+            </div>
+            <div class="slot-box">
+                <button class="slot-button">11:00 AM - 12:00 PM</button>
+            </div>
+            <button class="back-button">Back</button>
+        </div>
+
+        <div id="step3" class="step">
+            <h1>Appointment Updated</h1>
+            <p id="message"></p>
+            <div class="icon-box">
+                <i id="result-icon" class="fas"></i>
+            </div>
+            <button class="back-button">Back to Home</button>
+        </div>
+    </div>
+    <script src="exchange.js"></script>
+</body>
+</html>

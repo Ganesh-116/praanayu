@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.button-container button {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: #d62839;
+}
+
+.blood-bank-container, .blood-availability-container, .donor-details-container, .confirmation-container {
+    display: none;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.blood-bank {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.blood-bank:hover {
+    background-color: #f1f1f1;
+}
+
+.blood-bank-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.blood-bank-location {
+    font-size: 14px;
+    color: #666;
+}
+
+.donor-details-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.donor-details-container label {
+    margin: 10px 0 5px;
+}
+
+.donor-details-container input, 
+.donor-details-container select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.donor-details-container button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.donor-details-container button:hover {
+    background-color: #45a049;
+}
+
+.confirmation-container {
+    text-align: center;
+}
+
+.confirmation-container p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.previous-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.previous-button:hover {
+    background-color: #0056b3;
+}
+
+.blood-availability-container {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+    padding: 20px;
+}
+
+.blood-group {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.blood-group:hover {
+    background-color: #f1f1f1;
+}
+
+@media (max-width: 600px) {
+    .button-container {
+        flex-direction: column;
+    }
+
+    .button-container button {
+        width: 100%;
+    }
+}

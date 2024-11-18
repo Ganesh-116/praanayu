@@ -1,0 +1,116 @@
+/* CSS Styles */
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    width: 90vw; /* Set width to 90% of the viewport width */
+    height: 50.625vw; /* Set height to maintain 16:9 aspect ratio */
+    max-width: 800px; /* Optional: cap the max width for larger screens */
+    max-height: 450px; /* Optional: cap the max height for larger screens */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Allows scrolling if content exceeds container height */
+}
+
+.header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a73e8;
+    margin-bottom: 20px;
+}
+
+.location-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.location-input input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.ambulance-option {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.ambulance-option.private {
+    background-color: #f5e7da;
+}
+
+.ambulance-option.govt {
+    background-color: #daf5df;
+}
+
+.details {
+    display: none;
+    margin-top: 10px;
+}
+
+.details p {
+    margin: 5px 0;
+}
+
+.book-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.payment-section {
+    display: none;
+    margin-top: 20px;
+}
+
+.payment-section input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.pay-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1a73e8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.receipt {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}

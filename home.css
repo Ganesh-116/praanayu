@@ -1,0 +1,226 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0073e6;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.header h2 {
+    font-size: 24px;
+}
+
+.header h2 span {
+    color: #ffc107;
+}
+
+.profile-icon img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Search Section */
+.search-section {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.search-section input {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+}
+
+/* Ads Section */
+.ads-section {
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ad-container {
+    display: flex;
+    position: relative;
+}
+
+.ad-image {
+    width: 100%; /* Make the image responsive */
+    height: 300px; /* Set a fixed height for uniformity */
+    border-radius: 8px;
+    display: none;
+    object-fit: cover; /* Ensure the image maintains its aspect ratio */
+}
+
+.ad-image:first-child {
+    display: block;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.action-buttons button {
+    padding: 15px 30px;
+    font-size: 16px;
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.action-buttons .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.action-buttons button:hover {
+    background-color: #005bb5;
+    box-shadow: 0px 0px 10px rgba(0, 115, 230, 0.6);
+}
+
+/* Pharmacy Section */
+.pharmacy-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pharmacy-section button {
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pharmacy-section button:hover {
+    background-color: #218838;
+    box-shadow: 0px 0px 10px rgba(40, 167, 69, 0.6);
+}
+
+/* Explore Section */
+.explore-section {
+    margin: 20px 0;
+}
+
+.explore-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.explore-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.explore-buttons button {
+    padding: 12px 25px;
+    font-size: 14px;
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.explore-buttons button:hover {
+    background-color: #e0a800;
+    box-shadow: 0px 0px 10px rgba(255, 193, 7, 0.6);
+}
+
+/* Nutrient-dense Section */
+.nutrient-section {
+    margin: 20px 0;
+}
+
+.nutrient-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.nutrient-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.nutrient-buttons button {
+    padding: 12px 25px;
+    font-size: 14px;
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nutrient-buttons button:hover {
+    background-color: #5a6268;
+    box-shadow: 0px 0px 10px rgba(108, 117, 125, 0.6);
+}
+
+.lab-tests {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.lab-tests:hover {
+    background-color: #0069d9;
+    box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.6);
+}
+
+/* Footer Navigation */
+.footer-nav {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #333;
+}

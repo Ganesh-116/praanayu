@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-Minute Delivery Medicines</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Online Health Booking System</h1>
+            <nav>
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="medicines.html" class="nav-link">Medicines</a>
+                <a href="delivery.html" class="nav-link">10-Minute Delivery Medicines</a>
+                <a href="appointments.html" class="nav-link">Book Appointments</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="delivery-medicines">
+            <div class="container">
+                <h2>10-Minute Delivery Medicines</h2>
+                <div class="medicine-list">
+                    <div class="medicine-item">
+                        <h3>Azithromycin</h3>
+                        <p class="price">₹250.00</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="medicine-item">
+                        <h3>Ciprofloxacin</h3>
+                        <p class="price">₹320.00</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="medicine-item">
+                        <h3>Amoxicillin</h3>
+                        <p class="price">₹87.00</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="medicine-item">
+                        <h3>Ibuprofen</h3>
+                        <p class="price">₹150.00</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="medicine-item">
+                        <h3>Acetaminophen</h3>
+                        <p class="price">₹100.00</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="medicine-item">
+                        <h3>Aspirin</h3>
+                        <p class="price">₹200.00</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="total-section">
+                    <h3>Total: <span id="total-amount">₹0.00</span></h3>
+                    <button id="payment-button" class="payment-button">Proceed to Payment</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Online Health Booking System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const totalAmountElement = document.getElementById('total-amount');
+        let total = 0;
+
+        document.querySelectorAll('.add-to-cart').forEach((button) => {
+            button.addEventListener('click', function() {
+                const medicineItem = this.parentElement;
+                const medicineName = medicineItem.querySelector('h3').innerText;
+                const medicinePrice = parseFloat(medicineItem.querySelector('.price').innerText.replace('₹', ''));
+
+                // Get existing cart items from localStorage or initialize an empty array
+                let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+                // Add the new item to the cart
+                cartItems.push({ name: medicineName, price: medicinePrice });
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+                // Update total
+                total += medicinePrice;
+                totalAmountElement.innerText = `₹${total.toFixed(2)}`;
+
+                alert(medicineName + ' has been added to your cart!');
+            });
+        });
+
+        document.getElementById('payment-button').addEventListener('click', function() {
+            window.location.href = 'payment.html'; // Redirect to the cart page
+        });
+    </script>
+</body>
+</html>

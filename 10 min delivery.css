@@ -1,0 +1,84 @@
+/* CSS for Express Medicine Delivery */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.step {
+    margin-bottom: 20px;
+}
+
+.step h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+select, input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.medicine-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-section {
+    margin-top: 20px;
+}
+
+.cart-section h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+#orderDetails {
+    font-weight: bold;
+    color: green;
+    margin-top: 15px;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicines</title>
+    <link rel="stylesheet" href="medicines.css">  
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Online Health Booking System</h1>
+            <nav>
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="medicines.html" class="nav-link">Medicines</a>
+                <a href="appointments.html" class="nav-link">Book Appointments</a>
+                <a href="delivery.html" class="nav-link">10-Minute Delivery Medicines</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="medicines">
+            <div class="container">
+                <h2>Medicines</h2>
+                <div class="search-bar">
+                    <input type="text" id="search" placeholder="Search for medicines..." class="search-input">
+                    <button id="search-btn" class="search-button">Search</button>
+                    <button onclick="window.location.href='10 min delivery.html'">Express medicine devlivery</button>
+                </div>
+                <div class="medicine-list">
+                    <!-- Medicine Items with Background Images -->
+                    <div class="medicine-item" style="background-image: url('https://5.imimg.com/data5/SELLER/Default/2023/5/310361660/MY/ZA/PK/99810145/azithromycin-500-mg-tablets-500x500.jpg');">
+                        <h3>Azithromycin</h3>
+                        <p class="price">₹250.00</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="medicine-item" style="background-image: url('https://5.imimg.com/data5/SELLER/Default/2023/6/316397926/PW/FF/JK/9469980/ciprofloxacin-hydrochloride-tablets-500x500.jpg');">
+                        <h3>Ciprofloxacin</h3>
+                        <p class="price">₹320.00</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="medicine-item" style="background-image: url('https://5.imimg.com/data5/SELLER/Default/2023/8/332350358/SI/JT/VF/98283251/amoxicillin-drugs3.jpg');">
+                        <h3>Amoxicillin</h3>
+                        <p class="price">₹87.00</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="medicine-item" style="background-image: url('https://5.imimg.com/data5/SELLER/Default/2023/7/325863554/WI/JM/SY/135658020/ibuprofen-tablets-ip-200-mg-.jpg');">
+                        <h3>Ibuprofen</h3>
+                        <p class="price">₹150.00</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="medicine-item" style="background-image: url('https://5.imimg.com/data5/SELLER/Default/2023/8/334049272/TO/AE/EC/6548604/acetaminophen-tablets-usp-500-mg.jpg');">
+                        <h3>Acetaminophen</h3>
+                        <p class="price">₹100.00</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="medicine-item" style="background-image: url('https://5.imimg.com/data5/SELLER/Default/2023/7/330506870/UM/GZ/QO/135658020/aspirin-dispersible-tablets.jpg');">
+                        <h3>Aspirin</h3>
+                        <p class="price">₹200.00</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="total-section">
+                    <h3>Total: <span id="total-amount">₹0.00</span></h3>
+                    <button id="payment-button" class="payment-button">Proceed to Payment</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Online Health Booking System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const totalAmountElement = document.getElementById('total-amount');
+        let total = 0;
+
+        document.querySelectorAll('.add-to-cart').forEach((button) => {
+            button.addEventListener('click', function() {
+                const medicineItem = this.parentElement;
+                const medicineName = medicineItem.querySelector('h3').innerText;
+                const medicinePrice = parseFloat(medicineItem.querySelector('.price').innerText.replace('₹', ''));
+
+                // Get existing cart items from localStorage or initialize an empty array
+                let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+                // Add the new item to the cart
+                cartItems.push({ name: medicineName, price: medicinePrice });
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+                // Update total
+                total += medicinePrice;
+                totalAmountElement.innerText = `₹${total.toFixed(2)}`;
+
+                alert(medicineName + ' has been added to your cart!');
+            });
+        });
+
+        document.getElementById('payment-button').addEventListener('click', function() {
+            window.location.href = 'payment.html'; // Redirect to the cart page
+        });
+    </script>
+</body>
+</html>

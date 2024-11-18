@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Dashboard</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header Section -->
+        <header class="header">
+            <h2>Welcome <span>User</span></h2>
+            <div class="profile-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/9203/9203764.png" alt="Profile">
+                <button onclick="window.location.href='profile.html'">profile</button>
+            </div>
+        </header>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <input type="text" placeholder="Search for Hospital / Doctor">
+        </div>
+
+        <!-- Ads Section -->
+        <div class="ads-section">
+            <div class="ad-container">
+                <img class="ad-image" src="https://cdn.apollohospitals.com/hyderabad/2024/02/Desktop_Apollo-Home-Discharge-1024x317-1.jpg" alt="Ad Image 1">
+                <img class="ad-image" src="https://www.miracleshealth.com/assets/images/cradle82-banner.jpg" alt="Ad Image 2">
+                <img class="ad-image" src="https://cdn.apollohospitals.com/hyderabad/2024/01/Web_Home_Banner.webp" alt="Ad Image 4">
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button onclick="window.location.href='doctor-list.html'">
+                <img src="https://png.pngtree.com/png-vector/20230407/ourmid/pngtree-appointment-line-icon-vector-png-image_6677639.png" alt="Book Appointment Icon" class="icon"> Book an Appointment
+            </button>
+            <button onclick="window.location.href='emergency.html'">
+                <img src="https://png.pngtree.com/png-clipart/20230409/original/pngtree-emergency-icon-png-image_9037948.png" alt="Emergency Icon" class="icon"> Emergency
+            </button>
+        </div>
+
+        <!-- Pharmacy Button -->
+        <div class="pharmacy-section">
+            <button onclick="window.location.href='medicines.html'">PHARMACY 💊</button>
+        </div>
+
+        <!-- Explore Section -->
+        <div class="explore-section">
+            <h3>Explore</h3>
+            <div class="explore-buttons">
+                <button onclick="window.location.href='categories.html'">Benefits</button>
+                <button onclick="window.location.href='doctor-list.html'">Skin Care</button>
+                <button>Surgeons</button>
+                <button onclick="window.location.href='doctor-list.html'">Price of Surgeries</button>
+                <button onclick="window.location.href='doctor-list.html'">Dentists</button>
+                <button onclick="window.location.href='doctor-list.html'">Gynaecologist</button>
+            </div>
+        </div>
+
+        <!-- Nutrient-dense Section -->
+        <div class="nutrient-section">
+            <h3>Nutrient-dense</h3>
+            <div class="nutrient-buttons">
+                <button onclick="window.location.href='medicines.html'">Health Elders</button>
+                <button onclick="window.location.href='medicines.html'">Health Equipments</button>
+                <button onclick="window.location.href='blood.html'">Blood Donation</button>
+            </div>
+            <button class="lab-tests">LAB TESTS & BLOOD TESTS</button>
+        </div>
+
+        <!-- Footer Navigation -->
+        <footer class="footer-nav">
+            <a href="#"><img src="https://img.icons8.com/ios-filled/24/000000/home.png" alt="Home"></a>
+            <a href="#"><img src="https://img.icons8.com/ios-filled/24/000000/user.png" alt="Profile"></a>
+            <a href="#"><img src="https://img.icons8.com/ios-filled/24/000000/heart-health.png" alt="Health"></a>
+        </footer>
+    </div>
+
+    <script>
+        // Ad image rotation script
+        const adImages = document.querySelectorAll('.ad-image');
+        let currentAd = 0;
+
+        function showNextAd() {
+            adImages[currentAd].style.display = 'none'; // Hide current ad
+            currentAd = (currentAd + 1) % adImages.length; // Move to next ad
+            adImages[currentAd].style.display = 'block'; // Show next ad
+        }
+
+        // Initialize ad rotation
+        setInterval(showNextAd, 3000); // Change ad every 3 seconds
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Hospitals</title>
+    <link rel="stylesheet" href="hospital.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Nearby Hospitals</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="hospital-list" id="hospital-list">
+                <!-- Hospital Items will be dynamically inserted here -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Nearby Hospitals. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hospitals = [
+            { name: "Apollo Hospital", rating: 4.5, distance: 2.3, imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPBMBzt585vLf8zB8UvWuN-iTmi-oqNiSJqA&s" },
+            { name: "Care Hospital", rating: 4.0, distance: 1.8, imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDDICVQ9k9dg7aTTl8XtQdS_AnrsAGVeS0DQ&s" },
+            { name: "Yashoda Hospital", rating: 4.2, distance: 3.1, imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIhmGF1nWFrAyXrjBqN-X9XcrzWX5JwaVnpQ&s" },
+            { name: "KIMS Hospital", rating: 4.7, distance: 2.5, imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGdlz9zRqGADmPeTqXxvXxEnpaSJwwvPuDDw&s" },
+            { name: "Narayana Hospital", rating: 3.8, distance: 4.0, imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaifWhNuo2NRLj2ExyoitdFEzk1Q77WUmXqA&s" },
+            { name: "MaxCure Hospital", rating: 4.3, distance: 2.8, imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWm6v68dmIa_iUO14JxRoz_rcDVUQFTmJTyQ&s" } // New hospital added
+        ];
+
+        function displayHospitals() {
+            const hospitalList = document.getElementById('hospital-list');
+            hospitalList.innerHTML = '';
+
+            // Sort hospitals by distance
+            hospitals.sort((a, b) => a.distance - b.distance);
+
+            hospitals.forEach(hospital => {
+                const hospitalItem = document.createElement('div');
+                hospitalItem.className = 'hospital-item';
+                hospitalItem.style.backgroundImage = `url(${hospital.imageUrl})`;
+                hospitalItem.innerHTML = `
+                    <h3>${hospital.name}</h3>
+                    <p class="rating">Rating: ${hospital.rating}</p>
+                    <p class="distance">Distance: ${hospital.distance} km</p>
+                `;
+                hospitalList.appendChild(hospitalItem);
+            });
+        }
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+                displayHospitals(); // Show hospitals without geolocation
+            }
+        }
+
+        function showPosition(position) {
+            // This example does not include actual distance calculations
+            displayHospitals();
+        }
+
+        getLocation();
+    </script>
+</body>
+</html>

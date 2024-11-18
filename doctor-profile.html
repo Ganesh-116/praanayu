@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Online Health Booking System</h1>
+            <nav>
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="medicines.html" class="nav-link">Medicines</a>
+                <a href="appointments.html" class="nav-link">Book Appointments</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="doctor-profile">
+            <div class="container">
+                <h2>Dr. John Doe</h2>
+                <p>Specialization: General Medicine</p>
+                <div class="container">
+                    <h1 id="doctor-name"></h1>
+                    <div class="slots">
+                        <div class="slot green" onclick="redirectToPayment('9:00 AM - 10:00 AM')">9:00 AM - 10:00 AM</div>
+                        <div class="slot yellow" onclick="redirectToPayment('10:00 AM - 11:00 AM')">10:00 AM - 11:00 AM</div>
+                        <div class="slot red" onclick="redirectToPayment('12:00 PM - 1:00 PM')">12:00 PM - 1:00 PM</div>
+                    </div>
+                    <button onclick="redirectToPayment()">Book Now</button>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Online Health Booking System. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
