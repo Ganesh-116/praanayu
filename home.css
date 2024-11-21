@@ -1,4 +1,3 @@
-/* General Styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -22,6 +21,7 @@ body {
     padding: 10px 20px;
     border-radius: 8px;
     color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .header h2 {
@@ -53,6 +53,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 20px;
     outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Ads Section */
@@ -68,11 +69,12 @@ body {
 }
 
 .ad-image {
-    width: 100%; /* Make the image responsive */
-    height: 300px; /* Set a fixed height for uniformity */
+    width: 100%;
+    height: 300px;
     border-radius: 8px;
     display: none;
-    object-fit: cover; /* Ensure the image maintains its aspect ratio */
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .ad-image:first-child {
@@ -97,6 +99,7 @@ body {
     transition: 0.3s;
     display: flex;
     align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .action-buttons .icon {
@@ -107,7 +110,7 @@ body {
 
 .action-buttons button:hover {
     background-color: #005bb5;
-    box-shadow: 0px 0px 10px rgba(0, 115, 230, 0.6);
+    box-shadow: 0 8px 12px rgba(0, 115, 230, 0.3);
 }
 
 /* Pharmacy Section */
@@ -125,11 +128,12 @@ body {
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .pharmacy-section button:hover {
     background-color: #218838;
-    box-shadow: 0px 0px 10px rgba(40, 167, 69, 0.6);
+    box-shadow: 0 8px 12px rgba(40, 167, 69, 0.3);
 }
 
 /* Explore Section */
@@ -157,11 +161,12 @@ body {
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .explore-buttons button:hover {
     background-color: #e0a800;
-    box-shadow: 0px 0px 10px rgba(255, 193, 7, 0.6);
+    box-shadow: 0 8px 12px rgba(255, 193, 7, 0.3);
 }
 
 /* Nutrient-dense Section */
@@ -189,11 +194,12 @@ body {
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .nutrient-buttons button:hover {
     background-color: #5a6268;
-    box-shadow: 0px 0px 10px rgba(108, 117, 125, 0.6);
+    box-shadow: 0 8px 12px rgba(108, 117, 125, 0.3);
 }
 
 .lab-tests {
@@ -205,12 +211,13 @@ body {
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-top: 10px;
 }
 
 .lab-tests:hover {
     background-color: #0069d9;
-    box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.6);
+    box-shadow: 0 8px 12px rgba(0, 123, 255, 0.3);
 }
 
 /* Footer Navigation */
@@ -218,9 +225,56 @@ body {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
+    background-color: #0073e6;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .footer-nav a {
     text-decoration: none;
-    color: #333;
+    color: #fff;
+    font-size: 16px;
+}
+
+.footer-nav img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action-buttons button {
+        margin-bottom: 10px;
+    }
+
+    .explore-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nutrient-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header h2 {
+        font-size: 20px;
+    }
+
+    .profile-icon button {
+        margin-top: 10px;
+    }
 }
